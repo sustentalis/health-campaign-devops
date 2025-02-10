@@ -21,6 +21,6 @@ db_username: "testhealth"
 domain_name: "sustentalis-test-health.digit.org"
 
 # Replace with the name you want to give to your S3 bucket which is used to store the terraform states
-terraform_state_bucket_name: "sustentalis-testhealth-k8supgrade-digit-buckets"
+terraform_state_bucket_name: "sustentalis-testhealth-digit-buckets"
 
 
