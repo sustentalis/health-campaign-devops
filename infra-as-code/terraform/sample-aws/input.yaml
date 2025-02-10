@@ -4,7 +4,7 @@
 cluster_name: "sustentalis-testhealth-k8supgrade"
 
 # Replace with ssh key name you want
-ssh_key_name: "sustentalis-testhealth-k8supgrade-ssh-key" 
+ssh_key_name: "sustentalis-testhealth-ssh-key" 
 
 # Replace with public key which you want to add in your EC2 machines # ssh key which you want to add in your EC2 machines
 public_ssh_key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFu1vo932+s29R5qngEEv/o3Nu/RNffjiAjsrsm0+6Qy elton@laice"
