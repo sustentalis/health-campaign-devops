@@ -50,3 +50,19 @@ output "eks_cluster_iam_role_name" {
   value = module.eks.cluster_iam_role_name
 }
 
+output "kubectl_config" {
+  description = "The Kubernetes config file content"
+  value       = module.eks.kubeconfig
+  sensitive   = true
+}
+
+output "es_data_volume_ids" {
+  description = "List of Elasticsearch data volume IDs"
+  value       = module.elasticsearch.data_volume_ids
+}
+
+output "es_data_volume_ids" {
+  description = "List of Elasticsearch master volume IDs"
+  value       = module.elasticsearch.master_volume_ids
+}
+
