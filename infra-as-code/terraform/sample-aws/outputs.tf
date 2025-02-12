@@ -61,7 +61,7 @@ output "es_data_volume_ids" {
   value       = module.elasticsearch.data_volume_ids
 }
 
-output "es_data_volume_ids" {
+output "es_master_volume_ids" {
   description = "List of Elasticsearch master volume IDs"
   value       = module.elasticsearch.master_volume_ids
 }
