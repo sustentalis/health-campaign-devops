@@ -180,7 +180,7 @@ jobs:
           AWS_DEFAULT_REGION:  ${{ secrets.AWS_DEFAULT_REGION }}
           AWS_REGION:  ${{ secrets.AWS_REGION }}
       - name: Updating the terraform output data in environment.yaml files for deployment
-        run: terraform output -json | go run ../scripts/envYAMLUpdater.go
+        run: terraform output -json
         working-directory: infra-as-code/terraform/sample-aws
       - name: Archive infra-as-code folder
         run: tar -czf infra-as-code.tar.gz infra-as-code/
