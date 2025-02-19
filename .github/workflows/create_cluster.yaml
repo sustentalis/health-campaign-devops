@@ -11,7 +11,7 @@ on:
       destroyCommand:
         description: 'Type "destroy" to run the terraform_infra_destruction job.'
         required: true
-        default: ''            
+        default: 'destroy'            
 jobs:
   Input_validation:
     if: ${{ github.event_name == 'push' }}
@@ -180,7 +180,7 @@ jobs:
           AWS_DEFAULT_REGION:  ${{ secrets.AWS_DEFAULT_REGION }}
           AWS_REGION:  ${{ secrets.AWS_REGION }}
       - name: Updating the terraform output data in environment.yaml files for deployment
-        run: terraform output -json
+        run: terraform output -json | go run ../scripts/envYAMLUpdater.go
         working-directory: infra-as-code/terraform/sample-aws
       - name: Archive infra-as-code folder
         run: tar -czf infra-as-code.tar.gz infra-as-code/
@@ -296,7 +296,7 @@ jobs:
         run: echo "This command is run in the current directory"
         working-directory: infra-as-code/terraform/sample-aws/remote-state
       - name: Updating different files based on parameters provided in input.yaml
-        run: go run init.go
+        run: go run init.go 
         working-directory: infra-as-code/terraform/scripts
       - name: Install AWS IAM Authenticator
         run: |
